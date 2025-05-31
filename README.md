@@ -1,5 +1,6 @@
 #  Mean and variance of a discrete  distribution
-
+# Name: RITHIKA
+# Reg No: 212223230172
 
 # Aim : 
 
@@ -49,34 +50,33 @@ It shows the distance of a random variable from its mean. It is calcualted as
 
 # Program :
 ```
-NAME  :Rithika N
-REF NO : 212223230172
-```
-```
 import numpy as np
-
-L = list(map(int, input().split()))
-f = np.bincount(L)
-p = f / f.sum()
-x = np.arange(len(f))
-
-mean = np.dot(x, p)
-var = np.dot(x**2, p) - mean**2
-SD = np.sqrt(var)
-
-print(f"The Mean arrival rate is {mean:.3f}")
-print(f"The Variance of arrival from feeder is {var:.3f}")
-print(f"The Standard deviation of arrival from feeder is {SD:.3f}")
+L=[int(i) for i in input().split()]
+N=len(L); M=max(L) 
+x=list();f=list()
+for i in range (M+1):
+    c = 0
+    for j in range(N):
+        if L[j]==i:
+            c=c+1
+    f.append(c)
+    x.append(i)
+sf=np.sum(f)
+p=list()
+for i in range(M+1):
+    p.append(f[i]/sf) 
+mean=np.inner(x,p)
+EX2=np.inner(np.square(x),p)
+var=EX2-mean**2 
+SD=np.sqrt(var)
+print("The Mean arrival rate is %.3f "%mean)
+print("The Variance of arrival from feeder is %.3f "%var) 
+print("The Standard deviation of arrival from feeder is %.3F "%SD)
 ```
-
 
 # Output : 
-
-![image](https://github.com/user-attachments/assets/dc35d056-e0f3-4f9f-b00e-321f30096b7c)
-
-
+![image](https://github.com/user-attachments/assets/fabc3196-dcfd-4628-91c8-3cdd020c0051)
 
 # Results :
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
-
 
